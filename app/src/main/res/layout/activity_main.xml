@@ -8,8 +8,8 @@
 
     <ListView
         android:id="@+id/recordsView"
-        android:layout_width="381dp"
-        android:layout_height="505dp"
+        android:layout_width="383dp"
+        android:layout_height="410dp"
         android:layout_marginTop="16dp"
         android:background="#DFDFDF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,12 +23,22 @@
         android:id="@+id/button"
         android:layout_width="387dp"
         android:layout_height="70dp"
-        android:text="Button"
+        android:text="Add sample scores"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recordsView"
         app:layout_constraintVertical_bias="0.08" />
+
+    <Button
+        android:id="@+id/buttonOrder"
+        android:layout_width="383dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="16dp"
+        android:text="Order scores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

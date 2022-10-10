@@ -8,18 +8,24 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     // Model: Record (intents=puntuació, nom)
-    class Record {
+    class Record{
         public int intents;
         public String nom;
 
         public Record(int _intents, String _nom ) {
             intents = _intents;
             nom = _nom;
+        }
+
+        public int getIntents(){
+            return intents;
         }
     }
     // Model = Taula de records: utilitzem ArrayList
@@ -78,5 +84,21 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+
+        Button order = (Button) findViewById(R.id.buttonOrder);
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Collections.sort(records, new Comparator<Record>() {
+                    @Override
+                    public int compare(Record o1, Record o2) {
+                        return o1.getIntents()-o2.getIntents();
+                    }
+                });
+                // notificar l'adapter dels canvis al model
+                adapter.notifyDataSetChanged();
+            }
+        });
+
     }
 }
