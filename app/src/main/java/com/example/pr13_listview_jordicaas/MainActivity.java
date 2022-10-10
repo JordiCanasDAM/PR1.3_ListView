@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 // "Pintem" valors (també quan es refresca)
                 ((TextView) convertView.findViewById(R.id.nom)).setText(getItem(pos).nom);
                 ((TextView) convertView.findViewById(R.id.intents)).setText(Integer.toString(getItem(pos).intents));
+                ((ImageView) convertView.findViewById(R.id.image)).setImageResource(R.drawable.user_default_pic);
                 return convertView;
             }
 
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 String[] sampleUsers = {"Jordi","Belén","Josep","Lluís","Enric","Sergi","Iván","Ismael","Sergio","Albert","Erik","Alejandro","Pablo","Irene","Rafa"};
                 Random rng = new Random();
                 for (int i=0;i<30;i++) {
-                    records.add(new Record(rng.nextInt(49)+1 , sampleUsers[rng.nextInt(14)+1]));
+                    records.add(new Record(rng.nextInt(49)+1 , sampleUsers[rng.nextInt(sampleUsers.length-1)+1]));
                 }
                 // notificar l'adapter dels canvis al model
                 adapter.notifyDataSetChanged();
