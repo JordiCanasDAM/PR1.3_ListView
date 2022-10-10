@@ -8,6 +8,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (int i=0;i<500;i++) {
-                    records.add(new Record(100, "Anonymous"));
+                String[] sampleUsers = {"Jordi","Belén","Josep","Lluís","Enric","Sergi","Iván","Ismael","Sergio","Albert","Erik","Alejandro","Pablo","Irene","Rafa"};
+                Random rng = new Random();
+                for (int i=0;i<30;i++) {
+                    records.add(new Record(rng.nextInt(49)+1 , sampleUsers[rng.nextInt(14)+1]));
                 }
                 // notificar l'adapter dels canvis al model
                 adapter.notifyDataSetChanged();
